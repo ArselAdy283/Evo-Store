@@ -1,23 +1,15 @@
 import { categories, packages } from "@/src/data/store";
 import CategoryCard from "@/src/components/CategoryCard";
 import PackageCard from "@/src/components/PackageCard";
+import BannerComponent from "../components/BannerComponents";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
+    <main className="min-h-screen bg-s-950 text-white">
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-emerald-600 to-emerald-900 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Welcome to Our Store
-          </h1>
-          <p className="mt-4 text-emerald-100 max-w-xl mx-auto">
-            Purchase ranks, items, and coins to enhance your gameplay
-          </p>
-          <button className="mt-6 px-6 py-3 rounded-xl bg-black/30 hover:bg-black/40 transition">
-            Browse Store
-          </button>
-        </div>
+      <section className="relative bg-hero py-20">
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-linear-to-b from-transparent to-black/50 z-0" />
+        <BannerComponent/>
       </section>
 
       {/* Categories */}
