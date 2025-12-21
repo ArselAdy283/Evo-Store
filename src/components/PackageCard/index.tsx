@@ -5,7 +5,7 @@ export default function PackageCard({ pkg }: any) {
         {pkg.name}
       </h3>
 
-      <p className="text-blue-400 mt-1">{pkg.price}</p>
+      <p className="text-white mt-1">{pkg.price}</p>
 
       <button className="mt-4 w-full rounded-lg bg-blue-600 py-2 text-sm font-semibold hover:bg-blue-700 transition">
         Buy

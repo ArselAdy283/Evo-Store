@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
+import LinkEvo from "./LinkEvo"
 
 const BannerComponent = () => {
     return (
-        <div className="flex items-center justify-center h-50">
+        <div className="flex flex-col items-center justify-center">
             <Link href="/">
                 <Image
                     src="/assets/logo.png"
@@ -12,6 +13,9 @@ const BannerComponent = () => {
                     height={300}
                 />
             </Link>
+            <div>
+                <LinkEvo/>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { FaArrowLeft } from "react-icons/fa6";
+import Link from "next/link";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -7,6 +9,11 @@ const minecraftBold = localFont({
   src: "../fonts/MinecraftBold-nMK1.otf",
   variable: "--font-minecraft-bold",
   display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
 });
 
 const geistSans = Geist({
@@ -32,10 +39,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${minecraftBold.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${minecraftBold.variable} ${montserrat.variable} antialiased`}
       >
+        <Link
+          href="https://www.evopixel.xyz/"
+          className="fixed top-6 left-6 z-50 bg-black/50 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-black/70 transition"
+        >
+          <FaArrowLeft size={16} />
+          <span>Back</span>
+        </Link>
+
         {children}
       </body>
+
     </html>
   );
 }
