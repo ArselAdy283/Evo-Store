@@ -1,10 +1,18 @@
+import Content from "@/src/components/Content";
 import { categories } from "@/src/data/store";
 import CategoryCard from "@/src/components/CategoryCard";
 import BannerComponent from "@/src/components/BannerComponents";
 import Footer from "@/src/components/Footer";
-import LandingContent from "@/src/components/LandingComponents";
 
-export default function HomePage() {
+interface Props {
+  params: Promise<{
+    category: string;
+  }>;
+}
+
+export default async function CategoryPage({ params }: Props) {
+  const { category } = await params; // 🔥 WAJIB
+
   return (
     <main className="min-h-screen bg-s-950 text-white">
       {/* Banner */}
@@ -24,13 +32,13 @@ export default function HomePage() {
               Categories
             </h2>
 
-            {categories.map((cat) => (
+            {categories.map(cat => (
               <CategoryCard key={cat.id} category={cat} />
             ))}
           </aside>
 
-          {/* Landing Content */}
-          <LandingContent />
+          {/* ⬅️ SEKARANG AMAN */}
+          <Content category={category} />
 
         </div>
       </section>

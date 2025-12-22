@@ -1,4 +1,4 @@
-export default function PackageCard({ pkg }: any) {
+const RanksCard = ({ pkg }: any) => {
   return (
     <div className="rounded-2xl bg-zinc-900 border border-zinc-800 p-5 hover:scale-105 transition">
       <h3 className={`font-minecraft text-2xl font-semibold ${pkg.titleColor ?? "text-white"}`}>
@@ -13,3 +13,5 @@ export default function PackageCard({ pkg }: any) {
     </div>
   );
 }
+
+export default RanksCard
