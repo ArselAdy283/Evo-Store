@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const { category } = await params; // 🔥 WAJIB
+  const { category } = await params;
 
   return (
     <main className="min-h-screen bg-s-950 text-white">
@@ -37,7 +37,6 @@ export default async function CategoryPage({ params }: Props) {
             ))}
           </aside>
 
-          {/* ⬅️ SEKARANG AMAN */}
           <Content category={category} />
 
         </div>
